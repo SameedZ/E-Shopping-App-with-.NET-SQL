@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F2384CBA-32E1-44B9-9996-F40742A2835C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>V_Mart</RootNamespace>
+    <AssemblyName>V-Mart</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Dataviz.WinForms, Version=2.1.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.Dataviz.WinForms.2.1.6\lib\Bunifu.Dataviz.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.Dataviz.WinForms.2.1.6\lib\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRating, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShapes, Version=5.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextBox, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
+    </Reference>
+    <Reference Include="CircularProgressBar, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.2.0.0\lib\net35-Client\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>F:\Softwares cracked\Guna ui\[FTUApps.com] - Guna UI Framework Ultimate v2.0.0.1 + Keygen\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>F:\Softwares cracked\Guna ui\[FTUApps.com] - Guna UI Framework Ultimate v2.0.0.1 + Keygen\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WinFormAnimation, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.3.0.0\lib\net35-Client\WinFormAnimation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddPaymentMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPaymentMethod.Designer.cs">
+      <DependentUpon>AddPaymentMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAddProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminAddProduct.Designer.cs">
+      <DependentUpon>AdminAddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminProducts.Designer.cs">
+      <DependentUpon>AdminProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminRemoveProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminRemoveProduct.Designer.cs">
+      <DependentUpon>AdminRemoveProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdatePassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminUpdatePassword.Designer.cs">
+      <DependentUpon>AdminUpdatePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdatePassword_.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUpdatePassword_.Designer.cs">
+      <DependentUpon>AdminUpdatePassword_.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdateProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminUpdateProduct.Designer.cs">
+      <DependentUpon>AdminUpdateProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdateStock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminUpdateStock.Designer.cs">
+      <DependentUpon>AdminUpdateStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerCart.Designer.cs">
+      <DependentUpon>CustomerCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPortal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerPortal.Designer.cs">
+      <DependentUpon>CustomerPortal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardComplainCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardComplainCenter.Designer.cs">
+      <DependentUpon>DashboardComplainCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardOrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardOrderDetails.Designer.cs">
+      <DependentUpon>DashboardOrderDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardOrderFeed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardOrderFeed.Designer.cs">
+      <DependentUpon>DashboardOrderFeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardReports.Designer.cs">
+      <DependentUpon>DashboardReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputOrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputOrderDetails.Designer.cs">
+      <DependentUpon>InputOrderDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAdmin.Designer.cs">
+      <DependentUpon>LoginAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiniProductDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MiniProductDisplay.Designer.cs">
+      <DependentUpon>MiniProductDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PortalSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PortalSelection.Designer.cs">
+      <DependentUpon>PortalSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMessageBox.Designer.cs">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginCustomer.Designer.cs">
+      <DependentUpon>LoginCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductDisplay.Designer.cs">
+      <DependentUpon>ProductDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDisplayComparision.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductDisplayComparision.Designer.cs">
+      <DependentUpon>ProductDisplayComparision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportOrders.Designer.cs">
+      <DependentUpon>ReportOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignUpCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUpCustomer.Designer.cs">
+      <DependentUpon>SignUpCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_AdminPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_AdminPanel.Designer.cs">
+      <DependentUpon>Main_AdminPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.cs" />
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserBuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserBuy.Designer.cs">
+      <DependentUpon>UserBuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCompareProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserCompareProduct.Designer.cs">
+      <DependentUpon>UserCompareProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserComplain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserComplain.Designer.cs">
+      <DependentUpon>UserComplain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserHomePage.Designer.cs">
+      <DependentUpon>UserHomePage.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddPaymentMethod.resx">
+      <DependentUpon>AddPaymentMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminAddProduct.resx">
+      <DependentUpon>AdminAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminProducts.resx">
+      <DependentUpon>AdminProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminRemoveProduct.resx">
+      <DependentUpon>AdminRemoveProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUpdatePassword.resx">
+      <DependentUpon>AdminUpdatePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUpdatePassword_.resx">
+      <DependentUpon>AdminUpdatePassword_.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUpdateProduct.resx">
+      <DependentUpon>AdminUpdateProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUpdateStock.resx">
+      <DependentUpon>AdminUpdateStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerCart.resx">
+      <DependentUpon>CustomerCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPortal.resx">
+      <DependentUpon>CustomerPortal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashboardComplainCenter.resx">
+      <DependentUpon>DashboardComplainCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashboardOrderDetails.resx">
+      <DependentUpon>DashboardOrderDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashboardOrderFeed.resx">
+      <DependentUpon>DashboardOrderFeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashboardReports.resx">
+      <DependentUpon>DashboardReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputOrderDetails.resx">
+      <DependentUpon>InputOrderDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginAdmin.resx">
+      <DependentUpon>LoginAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiniProductDisplay.resx">
+      <DependentUpon>MiniProductDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PortalSelection.resx">
+      <DependentUpon>PortalSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomMessageBox.resx">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginCustomer.resx">
+      <DependentUpon>LoginCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_AdminPanel.resx">
+      <DependentUpon>Main_AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductDisplay.resx">
+      <DependentUpon>ProductDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductDisplayComparision.resx">
+      <DependentUpon>ProductDisplayComparision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ReportOrders.resx">
+      <DependentUpon>ReportOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUpCustomer.resx">
+      <DependentUpon>SignUpCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserBuy.resx">
+      <DependentUpon>UserBuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCompareProduct.resx">
+      <DependentUpon>UserCompareProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserComplain.resx">
+      <DependentUpon>UserComplain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserHomePage.resx">
+      <DependentUpon>UserHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
